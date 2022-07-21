@@ -31,7 +31,7 @@
                         isWorking = false;
                         break;
                     default:
-                        ServeCustomer(bills, ref totalIncome);
+                        SumNextBill(bills, ref totalIncome);
                         Console.Clear();
                         Console.WriteLine($"\n\nTotal income: {totalIncome}");
                         break;
@@ -39,7 +39,7 @@
             }
         }
 
-        static void ServeCustomer(Queue<int> bills, ref int totalIncome)
+        static void SumNextBill(Queue<int> bills, ref int totalIncome)
         {
             int nextBill = bills.Dequeue();
             totalIncome += nextBill;
